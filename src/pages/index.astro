@@ -1,11 +1,878 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Layout from "../layouts/Layout.astro";
+import Navbar from "../components/Navbar.astro";
+import "../styles/global.css";
 ---
 
 <Layout>
-	<Welcome />
+  <Navbar />
+
+  <!-- Presentación -->
+  <section
+    id="presentacion"
+    style="background-color: #BEBCBC; height: 100vh; display: flex; align-items: center;"
+  >
+    <div
+      style="max-width: 64rem; margin: 0 auto; display: flex; align-items: center; gap: 2rem; padding: 0 1rem; flex-wrap: wrap;"
+    >
+      <img
+        src="/perfil.jpg"
+        alt="Foto de Daniel"
+        style="width: 20rem; height: auto; border-radius: 9999px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);"
+      />
+      <div style="flex: 1; min-width: 250px;">
+        <h1
+          style="color: #C0957B; font-weight: 800; font-size: 3rem; margin: 0;"
+        >
+          Encantado, soy <span style="color: #9C4420;">Daniel Senespleda</span>
+        </h1>
+        <h2
+          style="margin-top: 0.5rem; color: #9C4420; font-weight: 700; font-size: 1.5rem;"
+        >
+          Estudiante de Ingeniería de Computadores | Programación, Web y
+          Seguridad
+        </h2>
+        <p
+          style="margin-top: 1rem; color: #6B3F24; font-size: 1.125rem; line-height: 1.6;"
+        >
+          Formación sólida en desarrollo y arquitectura de software. Me interesa
+          todo lo que implique escribir código limpio, resolver problemas
+          complejos y construir soluciones útiles.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sobre mí -->
+  <section
+    id="sobre-mi"
+    style="background-color: #F2EAE5; padding: 6rem 0 4rem 0;"
+  >
+    <div style="max-width: 64rem; margin: 0 auto; padding: 0 1rem;">
+      <h2
+        style="color: #7E2F15; font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;"
+      >
+        Sobre mí
+      </h2>
+      <p
+        style="color: #553A29; font-size: 1.125rem; line-height: 1.75; text-align: justify; margin-bottom: 1.5rem;"
+      >
+        Me llamo Daniel Senespleda, tengo 21 años y soy de Villalbilla.
+        Actualmente curso el grado de Ingeniería de Computadores en la
+        Universidad de Alcalá, donde he adquirido una sólida base en
+        programación, arquitectura de sistemas, inteligencia artificial,
+        sistemas operativos y diseño de aplicaciones. Dentro de los distintos
+        ámbitos de la carrera, me siento especialmente atraído por las áreas más
+        directamente relacionadas con la programación, como el desarrollo de
+        software, la creación de aplicaciones web y la ciberseguridad. Me
+        interesa especialmente comprender en profundidad cómo se comportan los
+        sistemas al ejecutar código, así como diseñar soluciones estructuradas y
+        eficientes.
+      </p>
+      <p
+        style="color: #553A29; font-size: 1.125rem; line-height: 1.75; text-align: justify; margin-bottom: 1.5rem;"
+      >
+        Fuera del ámbito académico, sigo ampliando mis conocimientos de forma
+        autodidacta, especialmente en entornos web y de seguridad informática,
+        combinando teoría con práctica mediante proyectos propios y
+        experimentación constante. Actualmente estoy desarrollando un proyecto
+        personal llamado ÁrbolGenealógico, una aplicación escrita en Java que
+        permite representar árboles familiares de forma visual e interactiva. En
+        este proyecto gestiono tanto la lógica de las relaciones como su
+        representación en pantalla, combinando estructuras de datos eficientes
+        con una presentación clara y funcional pensada para facilitar la
+        navegación entre los distintos miembros del árbol.
+      </p>
+      <p
+        style="color: #553A29; font-size: 1.125rem; line-height: 1.75; text-align: justify;"
+      >
+        También cuento con un nivel B2 de inglés certificado por Cambridge, y
+        actualmente me estoy preparando para obtener el título C1. Además,
+        estudio por mi cuenta rumano y japonés, idiomas en los que sigo
+        progresando aunque aún no dispongo de una certificación oficial.
+        Dispongo de los permisos de conducción B, A1, AM y A2, lo que me permite
+        desplazarme con total flexibilidad. Mi objetivo profesional es
+        desarrollarme en entornos que me permitan seguir programando y
+        aprendiendo cada día, ya sea en el desarrollo web, la ciberseguridad o
+        cualquier ámbito donde la lógica y el código estén en el centro del
+        trabajo.
+      </p>
+    </div>
+  </section>
+
+  <style>
+    /* Estilos comunes para los enlaces dentro de los botones de cada proyecto */
+    .project-buttons a {
+      color: #a4785d;
+      text-decoration: underline;
+      font-weight: 600;
+      transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+    .project-buttons a:hover {
+      color: #007bff; /* azul */
+      transform: scale(1.1);
+    }
+  </style>
+
+  <section
+    id="proyectos"
+    style="background-color: #FFFFFF; padding: 6rem 0 4rem 0;"
+  >
+    <div style="max-width: 80rem; margin: 0 auto; padding: 0 1rem;">
+      <h2
+        style="color: #7E2F15; font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 2.5rem;"
+      >
+        Proyectos destacados
+      </h2>
+      <div
+        style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem;"
+      >
+        <!-- Aeropuerto -->
+        <div
+          style="background-color: #BEBCBC; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.03)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="/Aeropuerto.png"
+            alt="Imagen Aeropuerto"
+            class="aeropuerto-img"
+          />
+          <h3
+            style="color: #C0957B; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;"
+          >
+            Aeropuerto
+          </h3>
+          <p style="color: #9C4420; font-size: 1rem; margin-bottom: 1rem;">
+            Simulación de un aeropuerto (gestión de aviones y pasajeros).
+          </p>
+          <div
+            class="project-buttons"
+            style="display: flex; align-items: center; gap: 0.5rem;"
+          >
+            <a
+              href="/Memoria_Aeropuerto.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver más
+            </a>
+            <a
+              href="https://github.com/DanielSenespleda/Aeropuerto"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/logos/github.svg"
+                alt="GitHub Logo"
+                style="width: 20px; height: 20px;"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Red Social -->
+        <div
+          style="background-color: #BEBCBC; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.03)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="/linkup.png"
+            alt="Captura del proyecto Red Social"
+            style="width: 100%; border-radius: 0.5rem; margin-bottom: 1rem;"
+          />
+          <h3
+            style="color: #C0957B; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;"
+          >
+            Red Social
+          </h3>
+          <p style="color: #9C4420; font-size: 1rem; margin-bottom: 1rem;">
+            Red social sencilla con backend en Java (Servlets y JSP) para
+            gestión centralizada de usuarios y publicaciones
+          </p>
+          <div
+            class="project-buttons"
+            style="display: flex; align-items: center; gap: 0.5rem;"
+          >
+            <a
+              href="/Memoria_RedSocial.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver más
+            </a>
+            <a
+              href="https://github.com/DanielSenespleda/RedSocial"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/logos/github.svg"
+                alt="GitHub Logo"
+                style="width: 20px; height: 20px;"
+              />
+            </a>
+          </div>
+        </div>
+
+        <!-- Sistemas de Control Inteligente -->
+        <div
+          style="background-color: #BEBCBC; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.03)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="/SCI.png"
+            alt="Imagen Sistemas de Control Inteligente"
+            style="width: 100%; border-radius: 0.5rem; margin-bottom: 1rem;"
+          />
+          <h3
+            style="color: #C0957B; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;"
+          >
+            Sistemas de Control Inteligente
+          </h3>
+          <p style="color: #9C4420; font-size: 1rem; margin-bottom: 1rem;">
+            Controladores Borrosos y Neuronales para la maniobra de aparcamiento
+            de un vehículo
+          </p>
+          <div
+            class="project-buttons"
+            style="display: flex; align-items: center; gap: 0.5rem;"
+          >
+            <a
+              href="/Memoria_SCI.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver más
+            </a>
+            <a
+              href="https://github.com/DanielSenespleda/Controladores-Borrosos-y-Neuronales-para-la-maniobra-de-aparcamiento-de-un-vehiculo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/logos/github.svg"
+                alt="GitHub Logo"
+                style="width: 20px; height: 20px;"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div
+          style="background-color: #BEBCBC; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.03)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="/Tienda.png"
+            alt="Imagen Tienda Online"
+            style="width: 100%; border-radius: 0.5rem; margin-bottom: 1rem;"
+          />
+          <h3
+            style="color: #C0957B; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;"
+          >
+            Tienda Online
+          </h3>
+          <p style="color: #9C4420; font-size: 1rem; margin-bottom: 1rem;">
+            Tienda online sencilla con backend en Java (Servlets y JSP) para
+            gestión centralizada de productos y usuarios
+          </p>
+          <div
+            class="project-buttons"
+            style="display: flex; align-items: center; gap: 0.5rem;"
+          >
+            <a
+              href="/Memoria_TiendaOnline.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Ver más
+            </a>
+            <a
+              href="https://github.com/DanielSenespleda/Tienda-Online-Javacomp-"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/logos/github.svg"
+                alt="GitHub Logo"
+                style="width: 20px; height: 20px;"
+              />
+            </a>
+          </div>
+        </div>
+
+        <div
+          style="background-color: #BEBCBC; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.03)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="/Arbol.jpg"
+            alt="Imagen Árbol Genealógico"
+            style="width: 100%; border-radius: 0.5rem; margin-bottom: 1rem;"
+          />
+          <h3
+            style="color: #C0957B; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;"
+          >
+            Árbol Genealógico
+          </h3>
+          <p style="color: #9C4420; font-size: 1rem; margin-bottom: 1rem;">
+            Árbol genealógico interactivo en Java con interfaz gráfica Swing
+            para gestionar y visualizar relaciones familiares de forma dinámica.
+          </p>
+          <a
+            style="color: #A4785D; text-decoration: underline; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            En desarrollo
+          </a>
+        </div>
+
+        <div
+          style="background-color: #BEBCBC; border-radius: 1rem; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 1.5rem; transition: transform 0.3s ease, box-shadow 0.3s ease;"
+          onmouseover="this.style.transform='scale(1.03)'"
+          onmouseout="this.style.transform='scale(1)'"
+        >
+          <img
+            src="/Portfolio.png"
+            alt="Imagen Portfolio"
+            style="width: 100%; border-radius: 0.5rem; margin-bottom: 1rem;"
+          />
+          <h3
+            style="color: #C0957B; font-size: 1.5rem; font-weight: 600; margin-bottom: 0.5rem;"
+          >
+            Portfolio
+          </h3>
+          <p style="color: #9C4420; font-size: 1rem; margin-bottom: 1rem;">
+            Portafolio minimalista y moderno, creado con Astro, Tailwind CSS y
+            JavaScript para mostrar mi perfil y habilidades de forma clara y
+            eficiente.
+          </p>
+          <a
+            href="https://github.com/DanielSenespleda/Compiladores"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="color: #A4785D; text-decoration: underline; font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem;"
+          >
+            Ver más
+            <img
+              src="/logos/github.svg"
+              alt="GitHub Logo"
+              style="width: 20px; height: 20px;"
+            />
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conocimientos -->
+  <section
+    id="conocimientos"
+    style="background-color: #F4ECE8; padding: 6rem 0;"
+  >
+    <div style="max-width: 80rem; margin: 0 auto; padding: 0 2rem;">
+      <h2
+        style="color: #7E2F15; font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 3rem;"
+      >
+        Conocimientos
+      </h2>
+
+      <div class="conocimientos-grid">
+        <!-- Desarrollo y Lenguajes -->
+        <div
+          style="background-color: #BEBCBC; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+        >
+          <h3
+            style="color: #7E2F15; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;"
+          >
+            Desarrollo y Lenguajes
+          </h3>
+          <div class="icon-list">
+            <div class="tech-icon">
+              <img src="/logos/java.svg" alt="Java" /><span class="tooltip"
+                >Java</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/C.svg" alt="C" /><span class="tooltip">C</span>
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/C++.svg" alt="C++" /><span class="tooltip"
+                >C++</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/python.svg" alt="Python" /><span class="tooltip"
+                >Python</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/javascript.svg" alt="JavaScript" /><span
+                class="tooltip">JavaScript</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/HTML.svg" alt="HTML" /><span class="tooltip"
+                >HTML</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/CSS.svg" alt="CSS" /><span class="tooltip"
+                >CSS</span
+              >
+            </div>
+            <div class="tech-icon">JSP</div>
+            <div class="tech-icon">Servlets</div>
+            <div class="tech-icon">Compiladores</div>
+          </div>
+        </div>
+
+        <!-- Sistemas y Redes -->
+        <div
+          style="background-color: #BEBCBC; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+        >
+          <h3
+            style="color: #7E2F15; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;"
+          >
+            Sistemas y Redes
+          </h3>
+          <div class="icon-list">
+            <div class="tech-icon">
+              <img src="/logos/Linux.svg" alt="Linux" /><span class="tooltip"
+                >Linux</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/Windows.svg" alt="Windows" /><span
+                class="tooltip">Windows</span
+              >
+            </div>
+            <div class="tech-icon">Sockets</div>
+            <div class="tech-icon">TCP/IP</div>
+            <div class="tech-icon">
+              <img src="/logos/wireshark.svg" alt="Wireshark" /><span
+                class="tooltip">Wireshark</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/vagrant.svg" alt="Vagrant" /><span
+                class="tooltip">Vagrant</span
+              >
+            </div>
+            <div class="tech-icon">RTOS</div>
+          </div>
+        </div>
+
+        <!-- Bases de Datos -->
+        <div
+          style="background-color: #BEBCBC; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+        >
+          <h3
+            style="color: #7E2F15; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;"
+          >
+            Bases de Datos
+          </h3>
+          <div class="icon-list">
+            <div class="tech-icon">
+              <img src="/logos/mysql.svg" alt="MySQL" /><span class="tooltip"
+                >MySQL</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/postgresql.svg" alt="PostgreSQL" /><span
+                class="tooltip">PostgreSQL</span
+              >
+            </div>
+            <div class="tech-icon">SQL avanzado</div>
+          </div>
+        </div>
+
+        <!-- IA y Visión Artificial -->
+        <div
+          style="background-color: #BEBCBC; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+        >
+          <h3
+            style="color: #7E2F15; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;"
+          >
+            IA y Visión Artificial
+          </h3>
+          <div class="icon-list">
+            <div class="tech-icon">Redes Neuronales</div>
+            <div class="tech-icon">Lógica difusa</div>
+            <div class="tech-icon">Visión artificial</div>
+            <div class="tech-icon">
+              <img src="/logos/matlab.svg" alt="MATLAB" /><span class="tooltip"
+                >MATLAB</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/simulink.svg" alt="Simulink" /><span
+                class="tooltip">Simulink</span
+              >
+            </div>
+          </div>
+        </div>
+
+        <!-- Electrónica y Empotrados -->
+        <div
+          style="background-color: #BEBCBC; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+        >
+          <h3
+            style="color: #7E2F15; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;"
+          >
+            Electrónica y Empotrados
+          </h3>
+          <div class="icon-list">
+            <div class="tech-icon">Circuitos</div>
+            <div class="tech-icon">Diseño digital</div>
+            <div class="tech-icon">
+              <img src="/logos/arduino.svg" alt="Arduino" /><span
+                class="tooltip">Arduino</span
+              >
+            </div>
+            <div class="tech-icon">Periféricos</div>
+          </div>
+        </div>
+
+        <!-- Gestión y Metodología -->
+        <div
+          style="background-color: #BEBCBC; padding: 2rem; border-radius: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1);"
+        >
+          <h3
+            style="color: #7E2F15; font-size: 1.5rem; font-weight: 700; margin-bottom: 1rem;"
+          >
+            Gestión y Proyectos
+          </h3>
+          <div class="icon-list">
+            <div class="tech-icon">Metodologías ágiles</div>
+            <div class="tech-icon">
+              <img src="/logos/git.svg" alt="Git" /><span class="tooltip"
+                >Git</span
+              >
+            </div>
+            <div class="tech-icon">
+              <img src="/logos/github.svg" alt="GitHub" /><span class="tooltip"
+                >GitHub</span
+              >
+            </div>
+            <div class="tech-icon">Gestión de proyectos</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Estilos para logos, tooltips y el grid responsive -->
+    <style>
+      .icon-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(48px, 1fr));
+        justify-items: center;
+        gap: 3rem 1rem;
+      }
+
+      .tech-icon {
+        position: relative;
+        width: 48px;
+        height: 48px;
+        text-align: center;
+        font-size: 0.75rem;
+        font-weight: 600;
+        color: #553a29;
+        transition: transform 0.3s ease;
+      }
+
+      .tech-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.1));
+      }
+
+      .tech-icon:hover {
+        transform: scale(1.2);
+      }
+
+      .tooltip {
+        visibility: hidden;
+        opacity: 0;
+        background-color: #7e2f15;
+        color: #fff;
+        border-radius: 0.5rem;
+        padding: 0.25rem 0.5rem;
+        position: absolute;
+        bottom: -1.5rem;
+        left: 50%;
+        transform: translateX(-50%);
+        transition: opacity 0.3s;
+        white-space: nowrap;
+        font-size: 0.65rem;
+        z-index: 10;
+      }
+
+      .tech-icon:hover .tooltip {
+        visibility: visible;
+        opacity: 1;
+      }
+
+      /* Nuevo: grid para las tarjetas */
+      .conocimientos-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+
+      /* Móvil: una columna */
+      @media (max-width: 768px) {
+        .conocimientos-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </section>
+
+  <!-- Recorrido -->
+  <section id="recorrido" style="background-color: #E6D5CB; padding: 12rem 0;">
+    <div style="max-width: 100rem; margin: 0 auto; padding: 0 2rem;">
+      <h2
+        style="color: #7E2F15; font-size: 2rem; font-weight: 700; text-align: center; margin-bottom: 2rem;"
+      >
+        Recorrido
+      </h2>
+
+      <!-- Flechas de navegación -->
+      <div
+        style="display: flex; justify-content: space-between; margin-bottom: 1rem;"
+      >
+        <button
+          onclick="document.getElementById('timeline').scrollBy({ left: -400, behavior: 'smooth' })"
+          style="background-color: #C0957B; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem;"
+        >
+          ←
+        </button>
+        <button
+          onclick="document.getElementById('timeline').scrollBy({ left: 400, behavior: 'smooth' })"
+          style="background-color: #C0957B; color: white; border: none; padding: 0.5rem 1rem; border-radius: 0.5rem;"
+        >
+          →
+        </button>
+      </div>
+
+      <!-- Línea de tiempo -->
+      <div
+        id="timeline"
+        style="
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden; 
+  gap: 4rem;
+  padding: 10rem 0;     
+  scroll-behavior: smooth;
+  height: auto;    
+  min-height: 400px;
+"
+      >
+        <!-- Línea horizontal -->
+        <div
+          style="position: absolute; top: 50%; left: 0; height: 4px; background-color: #7E2F15; z-index: 0; width: 2200px;"
+        >
+        </div>
+
+        <!-- Tarjeta y punto 1 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; bottom: 100%; transform: translateY(-1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              ESO
+            </h3>
+            <p style="color: #553A29;">2015 - 2019<br />I.E.S. Don Pelayo</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta y punto 2 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; top: 100%; transform: translateY(1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              Bachillerato
+            </h3>
+            <p style="color: #553A29;">
+              2019 - 2021<br />Modalidad Ciencias Puras
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta y punto 3 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; bottom: 100%; transform: translateY(-1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              Curso de Socorrismo
+            </h3>
+            <p style="color: #553A29;">2020<br />ATEMAC</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta y punto 4 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; top: 100%; transform: translateY(1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              Socorrista
+            </h3>
+            <p style="color: #553A29;">
+              Verano 2021<br />TAC TEC TENNIS ACADEMY SL
+            </p>
+          </div>
+        </div>
+
+        <!-- Tarjeta y punto 5 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; bottom: 100%; transform: translateY(-1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              Socorrista
+            </h3>
+            <p style="color: #553A29;">Verano 2023<br />JC Madrid</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta y punto 6 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; top: 100%; transform: translateY(1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              Socorrista
+            </h3>
+            <p style="color: #553A29;">Verano 2025<br />Infinitepool</p>
+          </div>
+        </div>
+
+        <!-- Tarjeta y punto 7 -->
+        <div style="position: relative; min-width: 250px;">
+          <div
+            style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 20px; height: 20px; background-color: #7E2F15; border-radius: 50%; z-index: 2;"
+          >
+          </div>
+          <div
+            style="position: absolute; bottom: 100%; transform: translateY(1rem); background-color: #BEBCBC; border-radius: 1rem; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.1); width: 100%; text-align: center;"
+          >
+            <h3 style="color: #7E2F15; font-size: 1.25rem; font-weight: 600;">
+              Grado en Ingeniería de Computadores
+            </h3>
+            <p style="color: #553A29;">
+              2021 - Actualidad<br />Universidad de Alcalá
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section
+    id="contacto"
+    style="background-color: #7E2F15; color: #BEBCBC; padding: 6rem 0 4rem 0; text-align: center;"
+  >
+    <div style="max-width: 36rem; margin: 0 auto; padding: 0 1rem;">
+      <h2 style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">
+        Contacto
+      </h2>
+      <p style="margin-bottom: 1rem;">Correo:</p>
+      <a
+        href="mailto:daniel.senespledaf@gmail.com"
+        style="display: inline-block; background-color: #C0957B; color: #7E2F15; font-weight: 700; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; transition: background-color 0.3s ease;"
+        onmouseover="this.style.backgroundColor='#A4785D'"
+        onmouseout="this.style.backgroundColor='#C0957B'"
+      >
+        daniel.senespledaf@gmail.com
+      </a>
+
+      <p style="margin-bottom: 1rem;">Teléfono:</p>
+      <a
+        href="tel:+34628917203"
+        style="display: inline-block; background-color: #C0957B; color: #7E2F15; font-weight: 700; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; transition: background-color 0.3s ease;"
+        onmouseover="this.style.backgroundColor='#A4785D'"
+        onmouseout="this.style.backgroundColor='#C0957B'"
+      >
+        628 91 72 03
+      </a>
+
+      <p style="margin-bottom: 1rem;">Ubicación:</p>
+      <a
+        href="https://www.google.com/maps/place/Villalbilla,+Alcalá+de+Henares,+España"
+        target="_blank"
+        style="display: inline-block; background-color: #C0957B; color: #7E2F15; font-weight: 700; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; transition: background-color 0.3s ease;"
+        onmouseover="this.style.backgroundColor='#A4785D'"
+        onmouseout="this.style.backgroundColor='#C0957B'"
+      >
+        Villalbilla, Alcalá de Henares, España
+      </a>
+
+      <p style="margin-bottom: 1rem;">Enlaces:</p>
+      <p style="margin-top: 1rem;">
+        <a
+          href="https://github.com/DanielSenespleda"
+          target="_blank"
+          style="margin-right: 1rem; color: #C0957B; text-decoration: underline; font-weight: 600;"
+          >GitHub</a
+        >
+        <a
+          href="https://www.linkedin.com/in/daniel-senespleda-fernandez-80290a367/"
+          target="_blank"
+          style="color: #C0957B; text-decoration: underline; font-weight: 600;"
+          >LinkedIn</a
+        >
+      </p>
+
+      <a
+        href="/CV-Daniel.pdf"
+        download
+        style="display: inline-block; margin-top: 1.5rem; background-color: #C0957B; color: #7E2F15; padding: 0.75rem 1.5rem; border-radius: 9999px; text-decoration: none; font-weight: 700; transition: background-color 0.3s ease;"
+        onmouseover="this.style.backgroundColor='#A4785D'"
+        onmouseout="this.style.backgroundColor='#C0957B'"
+      >
+        Descargar CV
+      </a>
+    </div>
+  </section>
 </Layout>
