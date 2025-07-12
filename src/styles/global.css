@@ -133,7 +133,7 @@ html {
     flex-direction: column !important;
     align-items: flex-start !important;
     overflow: visible !important;
-    padding-left: 2rem !important;
+    padding-left: 3.5rem !important;
     position: relative;
   }
 
@@ -162,15 +162,14 @@ html {
     margin-bottom: 3rem;
   }
 
-  /* Punto sobre la línea */
-  #timeline>div>div:first-child {
-    position: absolute !important;
-    left: 20px;
-    /* alineado con la línea vertical */
-    top: 0.5rem;
-    transform: translateX(-50%) !important;
-    z-index: 1;
-  }
+/* Punto alineado con la línea vertical */
+#timeline > div > div:first-child {
+  position: absolute !important;
+  left: 0 !important;              /* Posicionado justo al borde izquierdo del contenedor padre */
+  top: 0.5rem;
+  transform: translateX(-50%) !important;
+  z-index: 2;
+}
 
   /* Tarjeta del evento */
   #timeline>div>div:nth-child(2) {
