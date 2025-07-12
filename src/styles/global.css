@@ -21,7 +21,6 @@ html {
 
 /* Para móvil */
 @media (max-width: 768px) {
-
   body {
     padding: 1rem;
   }
@@ -40,6 +39,37 @@ html {
 
   nav a {
     font-size: 1rem;
+  }
+
+  /* 🎯 MENÚ HAMBURGUESA */
+  #nav-toggle {
+    display: block;
+  }
+
+  #nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: #C0957B;
+    padding: 1rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 49;
+  }
+
+  #nav-menu.show {
+    display: flex;
+  }
+
+  #nav-menu li {
+    margin-bottom: 1rem;
+    text-align: center;
+  }
+
+  #nav-menu li:last-child {
+    margin-bottom: 0;
   }
 
   section {
@@ -128,7 +158,7 @@ html {
     grid-template-columns: 1fr;
   }
 
-  /*Seccion de recorrido*/
+  /* Sección de recorrido */
   #timeline {
     flex-direction: column !important;
     align-items: flex-start !important;
@@ -150,29 +180,29 @@ html {
   }
 
   /* Oculta la línea horizontal que está dentro del primer div */
-  #timeline>div:first-child {
+  #timeline > div:first-child {
     display: none !important;
   }
 
   /* Cada evento */
-  #timeline>div {
+  #timeline > div {
     position: relative !important;
     min-width: auto !important;
     margin-left: 2.5rem;
     margin-bottom: 3rem;
   }
 
-/* Punto alineado con la línea vertical */
-#timeline > div > div:first-child {
-  position: absolute !important;
-  left: -75px !important;
-  top: 0.5rem;
-  transform: translateX(-50%) !important;
-  z-index: 2;
-}
+  /* Punto alineado con la línea vertical */
+  #timeline > div > div:first-child {
+    position: absolute !important;
+    left: -75px !important;
+    top: 0.5rem;
+    transform: translateX(-50%) !important;
+    z-index: 2;
+  }
 
   /* Tarjeta del evento */
-  #timeline>div>div:nth-child(2) {
+  #timeline > div > div:nth-child(2) {
     position: relative !important;
     top: auto !important;
     bottom: auto !important;
@@ -185,15 +215,14 @@ html {
     display: none !important;
   }
 
-  #timeline>div>div:nth-child(2) {
+  #timeline > div > div:nth-child(2) {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease;
   }
 
-  #timeline>div.show>div:nth-child(2) {
+  #timeline > div.show > div:nth-child(2) {
     opacity: 1;
     transform: translateY(0);
   }
-
 }
