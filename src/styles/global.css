@@ -104,14 +104,14 @@ html {
 
   /* Añadido para mejorar presentación en móviles */
   #presentacion {
-    padding-top: 6rem; /* baja la sección para que no tape el navbar */
+    padding-top: 8rem; /* baja la sección para que no tape el navbar */
   }
 
   .zona-presentacion {
-    min-height: 110vh; /* extiende el fondo gris más abajo */
+    min-height: 200vh; /* extiende el fondo gris más abajo */
   }
 
   #sobre-mi {
-    margin-top: 3rem; /* separación respecto a la sección anterior */
+    margin-top: 4rem; /* separación respecto a la sección anterior */
   }
 }
