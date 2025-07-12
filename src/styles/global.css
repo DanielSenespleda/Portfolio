@@ -6,17 +6,16 @@ html {
 
 .aeropuerto-img {
   width: 100%;
-  height: auto; /* mejor para mantener proporción */
+  height: auto;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  max-height: 400px; /* tamaño máximo en escritorio, ajusta a tu gusto */
-  object-fit: cover; /* para que rellene bien si cambias tamaños */
+  max-height: 400px;
+  object-fit: cover;
 }
 
-/* Para movil*/
+/* Para móvil */
 @media (max-width: 768px) {
 
-  /* Aplica padding horizontal */
   body {
     padding: 1rem;
   }
@@ -96,11 +95,23 @@ html {
   }
 
   .aeropuerto-img {
-    max-height: 200px; /* tamaño reducido en móvil */
-    width: 90%;        /* ancho relativo en móvil, ajusta si quieres */
+    max-height: 200px;
+    width: 90%;
     margin-left: auto;
     margin-right: auto;
-    display: block;    /* para centrar */
+    display: block;
   }
 
+  /* Añadido para mejorar presentación en móviles */
+  #presentacion {
+    padding-top: 6rem; /* baja la sección para que no tape el navbar */
+  }
+
+  .zona-presentacion {
+    min-height: 110vh; /* extiende el fondo gris más abajo */
+  }
+
+  #sobre-mi {
+    margin-top: 3rem; /* separación respecto a la sección anterior */
+  }
 }
