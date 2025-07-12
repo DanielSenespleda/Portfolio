@@ -5,11 +5,11 @@ html {
 }
 
 .aeropuerto-img {
-  width: 90%;
-  height: auto;
+  width: 100%;
+  height: 250px;
   border-radius: 0.5rem;
   margin-bottom: 1rem;
-  max-height: 400px;
+  /*max-height: 400px;*/
   object-fit: cover;
 }
 
