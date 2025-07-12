@@ -165,7 +165,7 @@ html {
 /* Punto alineado con la línea vertical */
 #timeline > div > div:first-child {
   position: absolute !important;
-  left: -50px !important;
+  left: -60px !important;
   top: 0.5rem;
   transform: translateX(-50%) !important;
   z-index: 2;
