@@ -110,15 +110,18 @@ html {
 
   /* Añadido para mejorar presentación en móviles */
   #presentacion {
-    padding-top: 6.4rem; /* baja la sección para que no tape el navbar */
+    padding-top: 6.4rem;
+    /* baja la sección para que no tape el navbar */
   }
 
   .zona-presentacion {
-    min-height: 160vh; /* extiende el fondo gris más abajo */
+    min-height: 160vh;
+    /* extiende el fondo gris más abajo */
   }
 
   #sobre-mi {
-    margin-top: 3rem; /* separación respecto a la sección anterior */
+    margin-top: 3rem;
+    /* separación respecto a la sección anterior */
   }
 
   .grid-proyectos {
@@ -126,7 +129,7 @@ html {
   }
 
   /*Seccion de recorrido*/
-    #timeline {
+  #timeline {
     flex-direction: column !important;
     align-items: flex-start !important;
     overflow: visible !important;
@@ -147,12 +150,12 @@ html {
   }
 
   /* Oculta la línea horizontal que está dentro del primer div */
-  #timeline > div:first-child {
+  #timeline>div:first-child {
     display: none !important;
   }
 
   /* Cada evento */
-  #timeline > div {
+  #timeline>div {
     position: relative !important;
     min-width: auto !important;
     margin-left: 2.5rem;
@@ -160,15 +163,17 @@ html {
   }
 
   /* Punto sobre la línea */
-  #timeline > div > div:first-child {
+  #timeline>div>div:first-child {
     position: absolute !important;
-    left: -2.5rem;
+    left: 20px;
+    /* alineado con la línea vertical */
     top: 0.5rem;
-    transform: none !important;
+    transform: translateX(-50%) !important;
+    z-index: 1;
   }
 
   /* Tarjeta del evento */
-  #timeline > div > div:nth-child(2) {
+  #timeline>div>div:nth-child(2) {
     position: relative !important;
     top: auto !important;
     bottom: auto !important;
@@ -176,17 +181,18 @@ html {
     margin-left: 1rem;
     margin-top: 0 !important;
   }
-#recorrido button {
-  display: none !important;
-}
 
-  #timeline > div > div:nth-child(2) {
+  #recorrido button {
+    display: none !important;
+  }
+
+  #timeline>div>div:nth-child(2) {
     opacity: 0;
     transform: translateY(20px);
     transition: all 0.6s ease;
   }
 
-  #timeline > div.show > div:nth-child(2) {
+  #timeline>div.show>div:nth-child(2) {
     opacity: 1;
     transform: translateY(0);
   }
