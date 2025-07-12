@@ -811,6 +811,29 @@ import "../styles/global.css";
     </div>
   </section>
 
+        <!--  Nuevo -->
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+      }
+    );
+
+    document.querySelectorAll("#timeline > div").forEach((el) =>
+      observer.observe(el)
+    );
+  });
+</script>
+
+
   <!-- Contacto -->
   <section
     id="contacto"
