@@ -1,25 +1,3 @@
-@import "tailwindcss";
-
-html {
-  scroll-behavior: smooth;
-}
-
-.aeropuerto-img {
-  width: 100%;
-  height: 62%;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-  /*max-height: 400px;*/
-  object-fit: cover;
-}
-
-.grid-proyectos {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2rem;
-}
-
-/* Para móvil */
 @media (max-width: 768px) {
   body {
     padding: 1rem;
@@ -41,9 +19,9 @@ html {
     font-size: 1rem;
   }
 
-  /* 🎯 MENÚ HAMBURGUESA */
+  /* MENÚ HAMBURGUESA */
   #nav-toggle {
-    display: block;
+    display: block !important;
   }
 
   #nav-menu {
@@ -55,12 +33,20 @@ html {
     width: 100%;
     background-color: #C0957B;
     padding: 1rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-top: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     z-index: 49;
+    transition: max-height 0.3s ease;
+    overflow: hidden;
+    max-height: 0;
+    pointer-events: none; /* bloquea clics cuando está oculto */
   }
 
   #nav-menu.show {
-    display: flex;
+    display: flex !important;
+    max-height: 500px;
+    pointer-events: auto; /* permite clics cuando está visible */
   }
 
   #nav-menu li {
@@ -141,17 +127,14 @@ html {
   /* Añadido para mejorar presentación en móviles */
   #presentacion {
     padding-top: 6.4rem;
-    /* baja la sección para que no tape el navbar */
   }
 
   .zona-presentacion {
     min-height: 160vh;
-    /* extiende el fondo gris más abajo */
   }
 
   #sobre-mi {
     margin-top: 3rem;
-    /* separación respecto a la sección anterior */
   }
 
   .grid-proyectos {
@@ -167,7 +150,6 @@ html {
     position: relative;
   }
 
-  /* Línea vertical */
   #timeline::before {
     content: "";
     position: absolute;
@@ -179,12 +161,10 @@ html {
     z-index: 0;
   }
 
-  /* Oculta la línea horizontal que está dentro del primer div */
   #timeline > div:first-child {
     display: none !important;
   }
 
-  /* Cada evento */
   #timeline > div {
     position: relative !important;
     min-width: auto !important;
@@ -192,7 +172,6 @@ html {
     margin-bottom: 3rem;
   }
 
-  /* Punto alineado con la línea vertical */
   #timeline > div > div:first-child {
     position: absolute !important;
     left: -75px !important;
@@ -201,7 +180,6 @@ html {
     z-index: 2;
   }
 
-  /* Tarjeta del evento */
   #timeline > div > div:nth-child(2) {
     position: relative !important;
     top: auto !important;
