@@ -165,7 +165,7 @@ html {
 /* Punto alineado con la línea vertical */
 #timeline > div > div:first-child {
   position: absolute !important;
-  left: 0 !important;              /* Posicionado justo al borde izquierdo del contenedor padre */
+  left: 22px !important; /* Exactamente centrado sobre la línea de 4px que comienza en 20px */
   top: 0.5rem;
   transform: translateX(-50%) !important;
   z-index: 2;
