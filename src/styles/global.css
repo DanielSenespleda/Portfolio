@@ -13,6 +13,12 @@ html {
   object-fit: cover;
 }
 
+.grid-proyectos {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+}
+
 /* Para móvil */
 @media (max-width: 768px) {
 
@@ -114,4 +120,9 @@ html {
   #sobre-mi {
     margin-top: 3rem; /* separación respecto a la sección anterior */
   }
+
+  .grid-proyectos {
+    grid-template-columns: 1fr;
+  }
+
 }
