@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
 ---
 
 <!doctype html>
@@ -7,10 +7,18 @@ import '../styles/global.css'
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 		<link rel="icon" type="image/svg+xml" href="/favicon.png" />
-
 		<meta name="generator" content={Astro.generator} />
+
+		<!-- VERIFICACIÓN DE GOOGLE -->
+		<meta
+			name="google-site-verification"
+			content="kCHwm_zIpOs1Q7ZV-SB52hu64W45p6FAPCZpfEZcl_k"
+		/>
+
+		<!-- PERMITE LA INDEXACIÓN -->
+		<meta name="robots" content="index, follow" />
+
 		<title>Portfolio de Daniel Senespleda</title>
 	</head>
 	<body class="bg-gray-50 text-gray-900 font-sans min-h-screen">
