@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Navbar from "../components/Navbar.astro";
 import "../styles/global.css";
+import { Content as SobreMiTexto } from "../content/sobre-mi.mdoc";
 ---
 
 <Layout>
@@ -56,41 +57,11 @@ import "../styles/global.css";
       >
         Sobre mí
       </h2>
-      <p
-        style="color: #553A29; font-size: 1.125rem; line-height: 1.75; text-align: justify; margin-bottom: 1.5rem;"
-      >
-        Me llamo Daniel Senespleda, soy graduado en Ingeniería de Computadores
-        por la Universidad de Alcalá (2026), donde he adquirido una sólida base
-        en desarrollo de software, arquitectura de sistemas y redes.
-        Recientemente he dado el salto hacia la seguridad de la información,
-        cursando un Máster en Ciberseguridad en la Universidad Europea para
-        especializarme en la protección de infraestructuras críticas.
-      </p>
-      <p
-        style="color: #553A29; font-size: 1.125rem; line-height: 1.75; text-align: justify; margin-bottom: 1.5rem;"
-      >
-        A nivel profesional, he trabajado como Arquitecto de Software y
-        Programador en el Hub de Innovación de Correos. Durante mi etapa allí,
-        participé muy activamente en el desarrollo de aplicaciones corporativas
-        usando Microsoft Power Platform. Fuera de lo laboral, me gusta
-        desarrollar proyectos propios, como el desarrollo de un Entorno
-        Simulador de Robots (mi TFG) y diversos proyectos en Java que veréis más
-        adelante en este Portfolio.
-      </p>
-      <p
-        style="color: #553A29; font-size: 1.125rem; line-height: 1.75; text-align: justify;"
-      >
-        También cuento con un nivel C1 de inglés certificado por Cambridge, y
-        actualmente me estoy preparando para obtener el título C1. Además,
-        estudio por mi cuenta rumano y japonés, idiomas en los que sigo
-        progresando aunque aún no dispongo de una certificación oficial.
-        Dispongo de los permisos de conducción B, A1, AM y A2, lo que me permite
-        desplazarme con total flexibilidad. Mi objetivo profesional es
-        desarrollarme en entornos que me permitan seguir programando y
-        aprendiendo cada día, ya sea en el desarrollo web, la ciberseguridad o
-        cualquier ámbito donde la lógica y el código estén en el centro del
-        trabajo.
-      </p>
+      
+      <div class="texto-sobre-mi">
+        <SobreMiTexto />
+      </div>
+
     </div>
   </section>
 
@@ -111,6 +82,25 @@ import "../styles/global.css";
       color: #007bff; /* azul */
       transform: scale(1.1);
     }
+    
+    .texto-sobre-mi {
+    color: #553A29;
+    font-size: 1.125rem;
+    line-height: 1.75;
+    text-align: justify;
+  }
+
+  .texto-sobre-mi :global(p) {
+    color: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    margin-bottom: 1.5rem;
+  }
+
+  .texto-sobre-mi :global(p:last-child) {
+    margin-bottom: 0;
+  }
+  }
   </style>
 
   <section
